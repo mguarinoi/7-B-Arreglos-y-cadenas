@@ -15,9 +15,10 @@ int main() {
         cout << a[i];
 
         if (i > 0) {
-            cout << " ";
+            cout << ' ';
         }
     }
 
+    cout << '\n';
     return 0;
 }
