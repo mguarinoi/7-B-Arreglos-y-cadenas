@@ -12,7 +12,11 @@ int main() {
     }
 
     for (int i = n - 1; i >= 0; i--) {
-        cout << a[i] << " ";
+        cout << a[i];
+
+        if (i > 0) {
+            cout << " ";
+        }
     }
 
     return 0;
