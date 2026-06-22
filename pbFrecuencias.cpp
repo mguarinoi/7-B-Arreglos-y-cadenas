@@ -5,7 +5,7 @@ int main() {
     int P, n;
     cin >> P >> n;
 
-    int freq[105] = {0};
+    int freq[105] = {};
 
     for (int i = 0; i < n; i++) {
         int F;
