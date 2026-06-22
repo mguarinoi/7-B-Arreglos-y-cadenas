@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+void imprimir(int freq[], int V) {
+    for (int i = 1; i <= V; i++) {
+        cout << freq[i] << "\n";
+    }
+}
+
 int main() {
     int V, C;
     cin >> V >> C;
@@ -13,9 +19,7 @@ int main() {
         freq[x]++;
     }
 
-    for (int i = 1; i <= V; i++) {
-        cout << freq[i] << "\n";
-    }
+    imprimir(freq, V);
 
     return 0;
 }
