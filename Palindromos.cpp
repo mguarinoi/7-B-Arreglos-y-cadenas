@@ -17,9 +17,10 @@ int main() {
 
         bool palindromo = true;
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len / 2; i++) {
             if (palabra[i] != palabra[len - 1 - i]) {
                 palindromo = false;
+                break;
             }
         }
 
