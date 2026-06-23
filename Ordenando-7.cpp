@@ -3,29 +3,29 @@
 using namespace std;
 
 int main() {
-    char palabra[101];
-    char letras[101];
-    int cantidad_letras = 0;
+    char texto[101];
+    int conteo[26] = {0}; 
+    int total_caracteres = 0;
 
-    while (cin >> palabra) {
-        for (int i = 0; ; i++) {
-            if (palabra[i] == '\0') {
-                break;
-            }
-            if (palabra[i] >= 'a' && palabra[i] <= 'z') {
-                letras[cantidad_letras] = palabra[i];
-                cantidad_letras++;
-            }
+    char c;
+    while (cin >> c) {
+        texto[total_caracteres] = c;
+        total_caracteres++;
+        if (c >= 'a' && c <= 'z') {
+            conteo[c - 'a']++;
         }
     }
 
-    for (int i = 0; i < cantidad_letras - 1; i++) {
-        for (int j = i + 1; j < cantidad_letras; j++) {
-            if (letras[i] > letras[j]) {
-                char temporal = letras[i];
-                letras[i] = letras[j];
-                letras[j] = temporal;
+    int letra_actual = 0;
+    for (int i = 0; i < total_caracteres; i++) {
+        if (texto[i] >= 'a' && texto[i] <= 'z') {
+            while (conteo[letra_actual] == 0) {
+                letra_actual++;
             }
+            cout << (char)(letra_actual + 'a');
+            conteo[letra_actual]--;
+        } else {
+            cout << texto[i];
         }
     }
 
